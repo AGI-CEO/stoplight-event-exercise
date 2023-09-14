@@ -18,6 +18,22 @@
     }
   }
 
+  function logMouseState(event) {
+    console.log(`Entered ${event.target.textContent} button`);
+  }
+
+  function logMouseLeave(event) {
+    console.log(`Left ${event.target.textContent} button`);
+  }
+
+  stopButton.addEventListener("mouseenter", logMouseState);
+  slowButton.addEventListener("mouseenter", logMouseState);
+  goButton.addEventListener("mouseenter", logMouseState);
+
+  stopButton.addEventListener("mouseleave", logMouseLeave);
+  slowButton.addEventListener("mouseleave", logMouseLeave);
+  goButton.addEventListener("mouseleave", logMouseLeave);
+
   stopButton.addEventListener("click", function () {
     toggleClass(stopLight, "stop");
   });
